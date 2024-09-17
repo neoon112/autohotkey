@@ -1,4 +1,4 @@
-﻿Gui, Add, Text,, Discord Auto Advertisement by Neoon`n`nHotkeys: CTRL+J=start CTRL+U=stop`n`n
+Gui, Add, Text,, Discord Auto Advertisement by Neoon`n`nHotkeys: CTRL+J=start CTRL+U=stop`n`n
 Gui, Add, Text,, Press "Start" to begin and "Stop" to exit the script.
 
 Gui, Add, Button, x10 y100 gStartScript, Start
@@ -23,6 +23,9 @@ StartScript:
     if (!isRunning) {
         isRunning := true
         GuiControl,, StatusText, Status: Active
+        Send ^v
+        Sleep 1000
+        Send {Enter}
         SetTimer, SendKeys, %Interval%
     }
 return
@@ -47,17 +50,20 @@ GuiClose:
     ExitApp
 return
 
-^j:: ; CTRL+J to start
-    Gui, Submit, NoHide ; Retrieve the value from the input box
-    Interval := IntervalEdit ; Assign the input value to the interval variable
+^j::
+    Gui, Submit, NoHide
+    Interval := IntervalEdit
     if (!isRunning) {
         isRunning := true
+        Send ^v
+        Sleep 1000
+        Send {Enter}
         GuiControl,, StatusText, Status: Active
         SetTimer, SendKeys, %Interval%
     }
 return
 
-^u:: ; CTRL+U to exit
+^u::
     if (isRunning) {
         isRunning := false
         GuiControl,, StatusText, Status: Waiting...
