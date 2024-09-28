@@ -24,11 +24,17 @@ StartScript:
     if (!isRunning) {
         isRunning := true
         GuiControl,, StatusText, Status: Active
-        Send {Space}
-        Sleep 500
-        Send {Space}
-        Sleep 500
-        Send {Space}
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
         SetTimer, SendKeys, %Interval%
     }
 return
@@ -43,11 +49,17 @@ return
 
 SendKeys:
     if (isRunning) {
-        Send {Space}
-        Sleep 500
-        Send {Space}
-        Sleep 500
-        Send {Space}
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
     }
 return
 
@@ -60,12 +72,18 @@ return
     Interval := IntervalEdit ; Assign the input value to the interval variable
     if (!isRunning) {
         isRunning := true
-        Send {Space}
-        Sleep 500
-        Send {Space}
-        Sleep 500
-        Send {Space}
         GuiControl,, StatusText, Status: Active
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
+        Sleep 2000
+        Send {Space Down}
+        Sleep 1
+        Send {Space Up}
         SetTimer, SendKeys, %Interval%
     }
 return
