@@ -1,6 +1,5 @@
 #SingleInstance, force
 Gui, Add, Text,, Stump Snail Macro by Neoon`n`nHotkeys: CTRL+L=start CTRL+O=stop`n`n
-Gui, Add, Text,, This macro presses space 3 times every set interval time.
 Gui, Add, Text,, Press "Start" to begin and "Stop" to exit the script.
 
 Gui, Add, Button, x10 y100 gStartScript, Start
